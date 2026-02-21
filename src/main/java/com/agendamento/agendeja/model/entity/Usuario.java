@@ -6,11 +6,11 @@ public class Usuario {
     private String nome;
     private String telefone;
     private String email;
-    private String senha;
-    private String endeco;
-    private String area_atuacao;
-    private String cnpj;
+    private String password;
+    private String endereco;
     private String cidade;
     private String estado;
+    private String tipoUsuario;
+    private boolean codStatus;
 
 }
