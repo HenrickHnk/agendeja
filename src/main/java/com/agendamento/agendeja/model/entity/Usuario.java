@@ -3,16 +3,23 @@ package com.agendamento.agendeja.model.entity;
 
 import com.agendamento.agendeja.model.enums.TipoUsuario;
 import jakarta.persistence.*;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.Setter;
 
 
 @Entity
 @Table(name = "usuario")
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE) //Informa que o padrão utilizado é uma única tabela para todos os usuários
 @DiscriminatorColumn(name = "tipo_usuario", discriminatorType = DiscriminatorType.STRING)//Informa qual é o nome da coluna que vai ser utilizado
+@Getter
+@Setter
+@EqualsAndHashCode(onlyExplicitlyIncluded = true)
 public class Usuario {
 
     @Id     //PK
     @GeneratedValue(strategy = GenerationType.IDENTITY) // Auto-Incremento (identificado sequencialmente de 1 em 1)
+    @EqualsAndHashCode.Include
     private Long id;
     @Column(nullable = true, length = 100)
     private String nome;

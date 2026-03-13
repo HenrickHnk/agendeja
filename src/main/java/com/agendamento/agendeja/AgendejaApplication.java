@@ -10,6 +10,7 @@ public class AgendejaApplication {
 
 		SpringApplication.run(AgendejaApplication.class, args);
 
+        System.out.println("Servidor respondendo da porta 8080");
 
 	}
 
