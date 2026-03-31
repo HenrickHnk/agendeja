@@ -3,15 +3,15 @@ package com.agendamento.agendeja.model.entity;
 import jakarta.persistence.Column;
 import jakarta.persistence.DiscriminatorValue;
 import jakarta.persistence.Entity;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 @EqualsAndHashCode(callSuper = true)
 @Entity
 @DiscriminatorValue("EMPREENDEDOR")
 @Getter
 @Setter
+@NoArgsConstructor  //Construtor padrão
+@AllArgsConstructor //Construtor com todos os atributos
 public class Empreendedor extends Usuario {
 
     @Column(nullable = true, length = 50)

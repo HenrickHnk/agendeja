@@ -3,9 +3,7 @@ package com.agendamento.agendeja.model.entity;
 
 import com.agendamento.agendeja.model.enums.TipoUsuario;
 import jakarta.persistence.*;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 
 @Entity
@@ -15,6 +13,9 @@ import lombok.Setter;
 @Getter
 @Setter
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
+@NoArgsConstructor  //Construtor padrão
+@AllArgsConstructor //Construtor com todos os atributos
+@Builder            //Forma diferenciada para criar objetos
 public class Usuario {
 
     @Id     //PK
@@ -35,7 +36,6 @@ public class Usuario {
     private String cidade;
     @Column(nullable = true, length = 100)
     private String estado;
-
 
     @Column(name = "tipo_usuario", insertable = false, updatable = false)
     private TipoUsuario tipoUsuario;
